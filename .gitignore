@@ -1,0 +1,7 @@
+cmake-build-debug
+CMakeLists.txt
+debug
+libstring.so
+libstring.a
+test
+.idea
