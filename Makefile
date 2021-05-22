@@ -16,7 +16,7 @@ install :
 	export LIBRARY_PATH
 
 static :
-	gcc -std=c99 -c $(SRC) -o $(OBJS)
+	gcc -g3 -std=c99 -c $(SRC) -o $(OBJS)
 	ar rcs libjstring.a $(OBJS)
 	ranlib libjstring.a
 	rm $(OBJS)

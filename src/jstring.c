@@ -127,14 +127,15 @@ void string_copy(string **destination, const char *source)
 
 void string_concat(string **destination, const char *source)
 {
-    int src_length = string_length(source), i = (*destination)->length;
+    int src_length = string_length(source), i = (*destination)->length - 1, j = 0;
     (*destination)->value = (char*) err_realloc((*destination)->value, sizeof(char) * ((*destination)->length * src_length));
     (*destination)->length += src_length;
     for(; i < (*destination)->length; ++i)
     {
-        (*destination)->value[i] = source[i];
+        (*destination)->value[i] = source[j];
+        ++j;
     }
-    (*destination)->value[(*destination)->length] = '\0';
+    (*destination)->value[(*destination)->length - 1] = '\0';
 }
 //To be implemented
 
